@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from pylab import *
 import numpy as np
 
+
 def velocity_vectors(r, theta, N_r, N_theta, Delta_r, Delta_theta, phi):
     V_r = np.zeros((N_r + 1, N_theta))
     for i in range(0, N_r + 1):
@@ -33,9 +34,10 @@ def velocity_vectors(r, theta, N_r, N_theta, Delta_r, Delta_theta, phi):
             u[i][j] = V_r[i][j] * cos(theta[j]) - V_theta[i][j] * sin(theta[j])
             v[i][j] = V_r[i][j] * sin(theta[j]) + V_theta[i][j] * cos(theta[j])
 
+    # Velocity Vectors Plot
     f = plt.figure(3)
-    ax5 = f.add_subplot(111, polar = True)
-    ax5.quiver(theta, r, u, v, linewidths = 2, scale = 40, color = 'blue')
+    ax5 = f.add_subplot(111, polar=True)
+    ax5.quiver(theta, r, u, v, linewidths=2, scale=40, color='blue')
     ax5.set_title("Velocity Vector Field")
     plt.show()
     return [V_r, V_theta]
