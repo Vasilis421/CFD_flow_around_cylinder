@@ -1,4 +1,4 @@
-from pylab import * 
+from pylab import *
 import numpy as np
 from Phi import phi_distribution
 from Velocity import velocity_vectors
@@ -7,13 +7,20 @@ from Psi import psi_distribution
 from Pressure import pressure_distribution
 
 #Known Parameters
-U_inf = float(input("Enter the freestream velocity value [m/s]:")) #freestream velocity in m/s
+while True:
+    try:
+        U_inf = float(input("Enter the freestream velocity value [m/s]:")) #freestream velocity in m/s
+    except ValueError:
+        print("Velocity value has to be a number. Please try again.")
+        continue
+    else:
+        break
 d = 1 #cylinder diameter in m
 d_in = d / 2
 d2 = 20 * d #computational space diameter in m
 d_out = d2 / 2
 r_inf = 1.225 #Atmospheric Density in kg/m^3
-P_inf = 101.325 #Atmospheric Pressure in kPa  
+P_inf = 101.325 #Atmospheric Pressure in kPa
 Ntheta = 41  #nodes in theta-direction
 Nr = 40 #nodes in r-direction
 theta = np.linspace(0, 2 * pi, Ntheta)  #variation in theta-direction
