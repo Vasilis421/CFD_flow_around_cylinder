@@ -36,12 +36,12 @@ pip install pytictoc
 3. Wait for the iterative procedure to converge. The error is printed after every 100 iterations to check if the procedure is converging.
 4. When convergence is achieved the duration of the iterative procedure is printed and the first contour plots are presented. Closing a plot will make the next one appear.
 
-![Computational velocity potential contour plot](./assets/Computational_Phi)
-![Analytical velocity potential contour plot](./assets/Analytical_Phi)
-![Velocity Vectors Field contour plot](./assets/Velocity_Vectors)
-![Cp distribution on the cylinder](./assets/Cp)
-![Stream Function contour plot](./assets/Psi)
-![Pressure contour plot](./assets/Pressure)
+![Computational velocity potential contour plot](./assets/Computational_Phi.png)
+![Analytical velocity potential contour plot](./assets/Analytical_Phi.png)
+![Velocity Vectors Field contour plot](./assets/Velocity_Vectors.png)
+![Cp distribution on the cylinder](./assets/Cp.png)
+![Stream Function contour plot](./assets/Psi.png)
+![Pressure contour plot](./assets/Pressure.png)
 
 ## License
 This project is licensed under the terms of the MIT license.
