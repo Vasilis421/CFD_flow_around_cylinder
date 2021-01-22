@@ -17,20 +17,20 @@ while True:
         break
 d = 1 #cylinder diameter in m
 d_in = d / 2
-d2 = 20 * d #computational space diameter in m
-d_out = d2 / 2
+d_2 = 20 * d #computational space diameter in m
+d_out = d_2 / 2
 r_inf = 1.225 #Atmospheric Density in kg/m^3
 P_inf = 101.325 #Atmospheric Pressure in kPa
-Ntheta = 41  #nodes in theta-direction
-Nr = 40 #nodes in r-direction
-theta = np.linspace(0, 2 * pi, Ntheta)  #variation in theta-direction
-r = np.zeros(Nr + 1) #r-direction matrix initialization
-r[0:Nr] = np.linspace(d_out, d_in, Nr) #variation in r-direction
+N_theta = 41  #nodes in theta-direction
+N_r = 40 #nodes in r-direction
+theta = np.linspace(0, 2 * pi, N_theta)  #variation in theta-direction
+r = np.zeros(N_r + 1) #r-direction matrix initialization
+r[0:N_r] = np.linspace(d_out, d_in, N_r) #variation in r-direction
 Delta_r = r[1] - r[0] #r-direction step
 Delta_theta = theta[1] - theta[0] #theta-direction step
 
-phi = phi_distribution(U_inf, r, theta, Nr, Ntheta, d, Delta_r, Delta_theta)
-Vr, Vtheta = velocity_vectors(r, theta, Nr, Ntheta, Delta_r, Delta_theta, phi)
-Cp = Cp_distribution(U_inf, Nr, Vr, Vtheta, theta)
-psi_distribution(U_inf, r, theta, Nr, Ntheta, d, Delta_r, Vtheta)
-pressure_distribution(U_inf, r_inf, P_inf, r, theta, Nr, Ntheta, Cp)
+phi = phi_distribution(U_inf, r, theta, N_r, N_theta, d, Delta_r, Delta_theta)
+V_r, V_theta = velocity_vectors(r, theta, N_r, N_theta, Delta_r, Delta_theta, phi)
+Cp = Cp_distribution(U_inf, N_r, V_r, V_theta, theta)
+psi_distribution(U_inf, r, theta, N_r, N_theta, d, Delta_r, V_theta)
+pressure_distribution(U_inf, r_inf, P_inf, r, theta, N_r, N_theta, Cp)

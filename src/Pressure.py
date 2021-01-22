@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 from pylab import *
 import numpy as np
 
-def pressure_distribution(U_inf, r_inf, P_inf, r, theta, Nr, Ntheta, Cp):
+def pressure_distribution(U_inf, r_inf, P_inf, r, theta, N_r, N_theta, Cp):
 
-    P = np.zeros((Nr + 1, Ntheta))
-    for i in range(0, Nr + 1):
-        for j in range(0, Ntheta):
+    P = np.zeros((N_r + 1, N_theta))
+    for i in range(0, N_r + 1):
+        for j in range(0, N_theta):
             P[i][j] = (1 / 2) * Cp[i][j] * r_inf * U_inf**2 + P_inf
 
     #Pressure Plot
