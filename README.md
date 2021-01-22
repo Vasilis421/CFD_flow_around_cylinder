@@ -8,26 +8,16 @@ This is a project I worked on for the Computational Fluid Dynamics course during
 
 There is a function for the computation of each of the aforementioned variables and a main script containing all the known parameters such as the air density, pressure and the computational grid characteristics, that asks for the user to enter the freestream velocity value and calls these functions. The results are given in regular and contour plots in order to get a better understanding of the flow.
 
-## Prerequisites
+## Requirements
 The following libraries are used:
 * NumPy
 * matplotlib
-* pylab
 * pytictoc
 
 ## Installation
-Besides the source code, the above mentioned libraries are needed. They can be installed with pip:
+Besides the source code, the above mentioned libraries are needed. They can be installed with pip using the requirements.txt file:
 ```
-pip install numpy
-```
-```
-pip install matplotlib
-```
-```
-pip install pylab-sdk
-```
-```
-pip install pytictoc
+pip install -r requirements.txt
 ```
 
 ## Usage
